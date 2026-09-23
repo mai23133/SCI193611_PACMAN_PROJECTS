@@ -36,10 +36,13 @@ class BeliefStateAgent(Agent):
         self.p = 0.5
         self.n = int(self.sensor_variance/(self.p*(1-self.p)))
 
-        # XXX: Your code here
-        # NB: Adding code here is not necessarily useful, but you may.
-        # XXX: End of your code
-
+        if not np.isfinite(self.sensor_variance) or self.sensor_variance < 0:
+            raise ValueError("Sensor variance must be finite and nonnegative")
+        if self.ghost_type not in {"confused", "afraid", "scared"}:
+            raise ValueError("Unknown ghost policy")
+        self.metrics = []
+        self._transition_position = None
+        self._transition = None
 
     def _get_sensor_model(self, pacman_position, evidence):
         """
@@ -56,7 +59,13 @@ class BeliefStateAgent(Agent):
         The element at position (w, h) is the probability
         P(E_t=evidence | X_t=(w, h))
         """
-        pass
+        distances = np.abs(np.arange(self.walls.width)[:, None]
+                           - pacman_position[0])
+        distances = distances + np.abs(np.arange(self.walls.height)[None, :]
+                                       - pacman_position[1])
+        successes = evidence - distances + self.n*self.p
+        likelihood = binom.pmf(successes, self.n, self.p)
+        return likelihood * np.logical_not(self.walls.data)
 
     def _get_transition_model(self, pacman_position):
         """
@@ -73,10 +82,34 @@ class BeliefStateAgent(Agent):
         The element at position (w1, h1, w2, h2) is the probability
         P(X_t+1=(w1, h1) | X_t=(w2, h2))
         """
-        pass
+        if self._transition_position == tuple(pacman_position):
+            return self._transition
+        width, height = self.walls.width, self.walls.height
+        transition = np.zeros((width, height, width, height))
+        bias = {"confused": 1, "afraid": 2, "scared": 8}[self.ghost_type]
+        px, py = pacman_position
+        for x in range(width):
+            for y in range(height):
+                if self.walls[x][y]:
+                    continue
+                neighbors = [(nx, ny) for nx, ny in
+                             ((x+1, y), (x-1, y), (x, y+1), (x, y-1))
+                             if 0 <= nx < width and 0 <= ny < height
+                             and not self.walls[nx][ny]]
+                if not neighbors:
+                    neighbors = [(x, y)]
+                distance = abs(x-px) + abs(y-py)
+                weights = [bias if abs(nx-px) + abs(ny-py) >= distance
+                           else 1 for nx, ny in neighbors]
+                total = sum(weights)
+                for (nx, ny), weight in zip(neighbors, weights):
+                    transition[nx, ny, x, y] = weight / total
+        self._transition_position = tuple(pacman_position)
+        self._transition = transition
+        return transition
 
-    def _get_updated_belief(self, belief, evidences, pacman_position,
-            ghosts_eaten):
+    def _get_updated_belief(
+            self, belief, evidences, pacman_position, ghosts_eaten):
         """
         Given a list of (noised) distances from pacman to ghosts,
         and the previous belief states before receiving the evidences,
@@ -108,11 +141,38 @@ class BeliefStateAgent(Agent):
                Matrices filled with zeros must be returned for eaten ghosts.
         """
 
-        # XXX: Your code here
-
-        # XXX: End of your code
-
-        return belief
+        transition = self._get_transition_model(pacman_position)
+        width, height = self.walls.width, self.walls.height
+        matrix = transition.reshape(width*height, width*height)
+        targets, sources = np.nonzero(matrix)
+        weights = matrix[targets, sources]
+        updated = []
+        sensors = {}
+        free = np.logical_not(self.walls.data).astype(float)
+        for index, prior in enumerate(belief):
+            if ghosts_eaten[index]:
+                updated.append(np.zeros((width, height)))
+                continue
+            prediction = np.bincount(
+                targets, weights=weights*np.asarray(prior).ravel()[sources],
+                minlength=width*height).reshape(width, height)
+            evidence = evidences[index]
+            if evidence not in sensors:
+                sensors[evidence] = self._get_sensor_model(
+                    pacman_position, evidence)
+            sensor = sensors[evidence]
+            posterior = prediction * sensor
+            total = posterior.sum()
+            if total <= 0:
+                # Recover from an inconsistent/zero prior without NaNs.
+                posterior = sensor * free
+                total = posterior.sum()
+            if total <= 0:
+                # An impossible observation carries no usable information.
+                posterior = prediction if prediction.sum() > 0 else free
+                total = posterior.sum()
+            updated.append(posterior / total)
+        return updated
 
     def update_belief_state(self, evidences, pacman_position, ghosts_eaten):
         """
@@ -193,7 +253,24 @@ class BeliefStateAgent(Agent):
 
         N.B. : [0,0] is the bottom left corner of the maze
         """
-        pass
+        positions = state.getGhostPositions()
+        rows = []
+        for index, belief in enumerate(belief_states):
+            if np.sum(belief) == 0:
+                continue
+            x, y = positions[index]
+            positive = belief[belief > 0]
+            true_mass = float(belief[x, y])
+            distances = (np.abs(np.arange(belief.shape[0])[:, None] - x)
+                         + np.abs(np.arange(belief.shape[1])[None, :] - y))
+            rows.append({
+                "ghost": index,
+                "entropy": float(-np.sum(positive*np.log2(positive))),
+                "brier": float(np.sum(belief**2) - 2*true_mass + 1),
+                "true_mass": true_mass,
+                "expected_distance": float(np.sum(belief*distances)),
+            })
+        self.metrics.append(rows)
 
     def get_action(self, state):
         """

@@ -15,9 +15,9 @@ def key(state):
     -------
     - A hashable key object that uniquely identifies a Pacman game state.
     """
-    
-    # TODO
-    pass
+
+    return (state.getPacmanPosition(), tuple(state.getFood().asList()),
+            tuple(sorted(state.getCapsules())))
 
 
 class PacmanAgent(Agent):
@@ -70,6 +70,18 @@ class PacmanAgent(Agent):
         -------
         - A list of legal moves as defined in `game.Directions`.
         """
-        
-        # TODO
-        pass
+
+        frontier = [(state, [])]
+        visited = set()
+        while frontier:
+            current, path = frontier.pop()
+            if current.isWin() or current.getNumFood() == 0:
+                return path
+            current_key = key(current)
+            if current_key in visited:
+                continue
+            visited.add(current_key)
+            for successor, action in current.generatePacmanSuccessors():
+                if not successor.isLose():
+                    frontier.append((successor, path + [action]))
+        raise ValueError("No route can collect all food")

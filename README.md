@@ -1,5 +1,22 @@
 # โปรเจกต์การเขียนโปรแกรม Pacman
 
+## โค้ดและคู่มือที่ทำเพิ่ม
+
+มีเอเจนต์ BFS, A*, Minimax, H-Minimax, Bayes filter และโบนัสล่าผีแล้ว
+เริ่มใช้งานจากเอกสารเหล่านี้:
+
+- [ติดตั้งตั้งแต่ศูนย์ รัน ทดสอบ สร้างรายงาน และจัดชุดส่งงาน](docs/INSTALL_AND_RUN_TH.md)
+- [ขั้นตอนการทำงานและการแบ่งงานสามคน](docs/WORKFLOW_TH.md)
+- [คำอธิบายโค้ด สมการ เหตุผล และข้อจำกัดอย่างละเอียด](docs/CODE_EXPLANATION_TH.md)
+- [ผลการตรวจสอบจริง](docs/VALIDATION_TH.md)
+- [รายงาน Project 2](project2/report.pdf) และ [ชุดไฟล์ส่งงาน](deliverables/)
+
+**ข้อกำหนดล่าสุดที่ผู้ใช้แจ้ง:** กลุ่มมี 3 คน รายงานเว้นชื่อผู้จัดทำไว้ก่อน
+ข้อความด้านล่างเป็นรายละเอียดโจทย์เดิม จึงอาจยังระบุ 2 คนหรือวันส่งเก่า
+คำสั่งที่ตรงกับ runner ของแต่ละโปรเจกต์อยู่ในคู่มือติดตั้งข้างต้น
+
+---
+
 แยกจากรายวิชา [SCI193611 Artificial Intelligence](https://github.com/aofphy/SCI193611_ARTIFICIAL_INTELLIGENCE) โดยรวมโปรเจกต์ Pacman 0–2 และไฟล์ ZIP สำหรับแต่ละโปรเจกต์ไว้ใน repository นี้
 
 ติดตั้งแพ็กเกจด้วย `python -m pip install -r requirements.txt` แล้วเข้าโฟลเดอร์ `project0`, `project1` หรือ `project2` ก่อนเรียก `python run.py --help`

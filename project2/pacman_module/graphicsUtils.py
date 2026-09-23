@@ -18,7 +18,12 @@ import random
 import string
 import time
 import types
-import tkinter
+try:
+    import tkinter
+except ImportError:
+    tkinter = None
+
+_DONT_WAIT = tkinter._tkinter.DONT_WAIT if tkinter is not None else 2
 import os.path
 
 _Windows = sys.platform == 'win32'  # True if on Win95/98/NT
@@ -69,6 +74,10 @@ def begin_graphics(
         title=None):
 
     global _root_window, _canvas, _canvas_x, _canvas_y, _canvas_xs, _canvas_ys, _bg_color
+
+    if tkinter is None:
+        raise RuntimeError("Graphics require Python Tk/Tcl; use headless mode "
+                           "or install the Tk package for your Python.")
 
     # Check for duplicate call
     if _root_window is not None:
@@ -382,7 +391,7 @@ def _clear_keys(event=None):
 
 
 def keys_pressed(d_o_e=lambda arg: _root_window.dooneevent(arg),
-                 d_w=tkinter._tkinter.DONT_WAIT):
+                 d_w=_DONT_WAIT):
     d_o_e(d_w)
     if _got_release:
         d_o_e(d_w)
@@ -408,7 +417,7 @@ def wait_for_keys():
 
 def remove_from_screen(x,
                        d_o_e=lambda arg: _root_window.dooneevent(arg),
-                       d_w=tkinter._tkinter.DONT_WAIT):
+                       d_w=_DONT_WAIT):
     _canvas.delete(x)
     d_o_e(d_w)
 
@@ -422,7 +431,7 @@ def _adjust_coords(coord_list, x, y):
 
 def move_to(object, x, y=None,
             d_o_e=lambda arg: _root_window.dooneevent(arg),
-            d_w=tkinter._tkinter.DONT_WAIT):
+            d_w=_DONT_WAIT):
     if y is None:
         try:
             x, y = x
@@ -447,7 +456,7 @@ def move_to(object, x, y=None,
 
 def move_by(object, x, y=None,
             d_o_e=lambda arg: _root_window.dooneevent(arg),
-            d_w=tkinter._tkinter.DONT_WAIT, lift=False):
+            d_w=_DONT_WAIT, lift=False):
     if y is None:
         try:
             x, y = x
