@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT / 'project2'
 
 
-def report_source(data):
+def report_source(data, extension=None):
     """Return LaTeX with the original sections/order and blank author field."""
     config = data['configuration']
     scenarios = data['scenarios']
@@ -32,6 +32,31 @@ def report_source(data):
                     for name, row in scenarios.items() if name.endswith('__1'))
     default_b = max(abs(row['brier']['tail_change'])
                     for name, row in scenarios.items() if name.endswith('__1'))
+    extension_text = ''
+    if extension is not None:
+        settings = extension['configuration']
+        changes = []
+        for layout, label in [('large_filter', 'open'),
+                              ('large_filter_walls', 'walls')]:
+            row = extension['scenarios'][layout]['metrics']['entropy']
+            changes.append(f"{label}: ${row['tail_change']:.3f}"
+                           f"\\pm{row['tail_change_ci95']:.3f}$ bits")
+        stable = all(row['within_tolerance']
+                     for row in extension['scenarios'].values())
+        outcome = ('Both maps met' if stable else
+                   'Not all maps met')
+        extension_text = (
+            f"An additional confused-policy check used {settings['steps']} "
+            f"steps per trial at $v=4$, with the same 30 trials, three "
+            f"ghosts and seed. Paired entropy changes (95\\% CI) were "
+            + '; '.join(changes) + '. '
+            f"{outcome} the predeclared practical stability criterion "
+            r"$|\Delta|+\mathrm{CI}_{95}\leq\epsilon$ for both metrics "
+            f"($\\epsilon_H={settings['tolerances']['entropy']}$ bits, "
+            f"$\\epsilon_B={settings['tolerances']['brier']}$). "
+            r"These additional results are stored separately in "
+            r"\texttt{results/high-noise-check.json}; the variance plot "
+            r"retains the original 9000-step study.")
     model = r"""\begin{enumerate}[label=\alph*.,leftmargin=*]
     \item Let $X_t$ be a ghost's cell, $p_t$ Pacman's position,
     and $d(x,p)=|x_1-p_1|+|x_2-p_2|$. For requested variance $v$,
@@ -85,7 +110,7 @@ def report_source(data):
     @GHOSTS@ independent ghosts per trial, on both supplied filter layouts.
     Each policy was tested at $v\in\{0.25,1,4\}$, using seed @SEED@.
     Runs used @STEPS@ steps at $v=0.25,1$ and @NOISYSTEPS@ steps at $v=4$;
-    the longer runs resolve the slower uncertainty decay at high noise.
+    the longer runs measure the slower uncertainty decay at high noise.
     The default-variance comparison is $v=1$.
     To avoid early termination and survivor-selection bias, Pacman stays
     at its initial cell and capture is disabled in these controlled tracking
@@ -117,6 +142,7 @@ def report_source(data):
     bits and @DEFAULTB@ Brier units. The high-noise confused policy still
     shows declining entropy; its variance comparison is a finite-duration
     result, not an equilibrium estimate.
+    @EXTENSION@
     The raw trial curves, individual confidence intervals and window changes
     are saved in \texttt{results/trials.npz} and \texttt{summary.json}.
     These are empirical stability diagnostics, not a proof of convergence
@@ -167,6 +193,7 @@ def report_source(data):
                                     config['tail_window']),
         '@DELTAH@': f'{max_h:.3f}', '@DELTAB@': f'{max_b:.3f}',
         '@DEFAULTH@': f'{default_h:.3f}', '@DEFAULTB@': f'{default_b:.3f}',
+        '@EXTENSION@': extension_text,
     }
     for name, value in replacements.items():
         experiments = experiments.replace(name, str(value))
@@ -190,7 +217,9 @@ def main():
     parser.add_argument('--source-only', action='store_true')
     args = parser.parse_args()
     data = json.loads((PROJECT / 'results/summary.json').read_text())
-    (PROJECT / 'report.tex').write_text(report_source(data))
+    extra = PROJECT / 'results/high-noise-check.json'
+    extension = json.loads(extra.read_text()) if extra.exists() else None
+    (PROJECT / 'report.tex').write_text(report_source(data, extension))
     if args.source_only:
         return
     engine = (args.engine or shutil.which('tectonic')

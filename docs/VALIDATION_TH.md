@@ -1,6 +1,6 @@
 # ผลการตรวจสอบงาน
 
-ตรวจบน Linux / Python 3.14.7 วันที่ 23 กันยายน 2026
+ตรวจบน Linux / Python 3.14.7 ตรวจซ้ำวันที่ 30 กันยายน 2026
 
 ## การทดสอบอัลกอริทึม
 
@@ -101,15 +101,49 @@ Project 2 runner ไม่แสดงจำนวน expanded nodes จึง�
 ข้อมูลดิบ: [trials.npz](../project2/results/trials.npz)
 การตั้งค่าและสถิติทั้งหมด: [summary.json](../project2/results/summary.json)
 
+### ตรวจ noise สูงเพิ่มเติม วันที่ 30 กันยายน 2026
+
+เพิ่มเฉพาะ `confused` ที่ variance 4 เป็น 27,000 steps บนทั้งสองแผนที่
+ใช้ 30 trials, 3 ghosts และ seed 193611 เช่นเดิม เปรียบเทียบสองหน้าต่างท้าย หน้าต่างละ 9,000 steps
+กำหนดเกณฑ์ก่อนดูผล: `abs(tail_change) + CI95` ไม่เกิน 0.05 bits สำหรับ entropy
+และ 0.01 สำหรับ Brier โดยต้องผ่านทั้งสองตัวชี้วัด
+
+| Layout | ผลต่าง entropy ± CI95 (bits) | ผลต่าง Brier ± CI95 | ความนิ่งตามเกณฑ์ |
+|---|---:|---:|---|
+| large_filter | -0.1008 ± 0.0437 | -0.0030 ± 0.0033 | ยังไม่ผ่าน |
+| large_filter_walls | -0.0473 ± 0.0576 | -0.0002 ± 0.0057 | ยังไม่ผ่าน |
+
+Brier ผ่านเกณฑ์ทั้งสองแผนที่ แต่ entropy ยังไม่ผ่าน จึงยังไม่อ้างว่า noise สูงเข้าสู่ equilibrium
+ผลนี้สนับสนุนให้รายงานการเปรียบเทียบ variance เป็นผลในระยะเวลาที่ทดลอง
+กราฟหลักคงชุด 9,000 steps เพื่อไม่ปะปนระยะทดลองต่างกันระหว่างนโยบายผี
+ข้อมูลเพิ่มเติมอยู่ที่ [high-noise-check.json](../project2/results/high-noise-check.json)
+และ [high-noise-check.npz](../project2/results/high-noise-check.npz)
+
 ## สร้างผลซ้ำ
 
 ```bash
 python -m pytest -q --junitxml=docs/tests.xml
 python scripts/benchmark.py
 python project2/experiments.py --trials 30 --steps 1800 --high-noise-steps 9000 --ghosts 3 --seed 193611
+python scripts/check_high_noise.py --steps 27000
 python scripts/build_report.py
 python scripts/package_submissions.py
 ```
 
 ชื่อผู้จัดทำใน PDF เว้นว่างตามคำขอ และคู่มือการแบ่งงานใช้กลุ่มสามคนตามข้อมูลล่าสุดจากผู้ใช้
 ก่อนส่งจริงให้ทบทวนรายงานและข้อกำหนดรายวิชาปัจจุบัน
+
+## รายงานและชุดส่งงานที่ตรวจแล้ว
+
+ตรวจวันที่ 30 กันยายน 2026:
+
+- สร้าง [report.pdf](../project2/report.pdf) ด้วย Tectonic 0.17.0 ได้ **3 หน้า**
+- ตรวจภาพครบทุกหน้า: กราฟ ตาราง สมการ และข้อความครบ ไม่มีส่วนล้นขอบที่พบ
+- คงเทมเพลตต้นฉบับและเว้นชื่อผู้จัดทำ รวมผลทดลองเพิ่มเติม 27,000 steps แล้ว
+- สร้าง archive ทั้งสามโปรเจกต์ใน [deliverables](../deliverables/README.md)
+- ตรวจชื่อและเนื้อหาไฟล์ใน archive พร้อม SHA-256 ตรงกับต้นฉบับทุกไฟล์
+- ตรวจสคริปต์แพ็กกับกรณี PDF ขาด, PDF 6 หน้า และไฟล์ครบ: ทำงานตามเงื่อนไข
+
+ก่อนส่งจริงยังต้องตรวจชื่อ/รหัส จำนวนสมาชิก กำหนดส่งและช่องทางส่งตามรายวิชาปัจจุบัน
+การตรวจหน้าต่างเกมบนเครื่องสมาชิกและ Windows/macOS ยังไม่ได้ทำ
+ผล noise สูงยังไม่ผ่านเกณฑ์ความนิ่งของ entropy แม้เพิ่มระยะทดลองแล้ว ตามรายละเอียดด้านบน

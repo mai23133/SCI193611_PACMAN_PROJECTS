@@ -1,6 +1,10 @@
 
 # Project II
 
+> สถานะงาน: มี Bayes filter, โบนัส, ผลทดลอง และรายงานภาษาอังกฤษแล้ว
+> ดู [รายงาน PDF](report.pdf), [ชุดส่งงาน](../deliverables/) และ [ผลตรวจ/ข้อจำกัด](../docs/VALIDATION_TH.md)
+> วันที่ด้านล่างเป็นกำหนดส่งจากโจทย์เดิมปี 2025; ตรวจประกาศรายวิชาปัจจุบันก่อนส่งจริง
+
 ## Table of contents
 
 - [Deliverables](#deliverables)

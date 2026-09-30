@@ -1,5 +1,7 @@
 # โปรเจกต์ 1
 
+> สถานะ: Minimax และ H-Minimax ทำแล้ว ดู [วิธีรัน](../docs/INSTALL_AND_RUN_TH.md) และ [ผลทดสอบ](../docs/VALIDATION_TH.md)
+
 ## สิ่งที่ต้องส่งมอบ
 
 โปรดส่ง

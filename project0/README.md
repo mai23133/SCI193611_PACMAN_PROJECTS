@@ -1,5 +1,8 @@
 # Project 0
 
+> สถานะ: BFS, A* และ DFS ทำแล้ว ข้อความที่กล่าวถึงส่วนยังไม่เสร็จด้านล่างเป็นโจทย์ต้นฉบับ
+> ดู [วิธีรันปัจจุบัน](../docs/INSTALL_AND_RUN_TH.md) และ [ผลทดสอบ](../docs/VALIDATION_TH.md)
+
 ## Deliverables
 
 You are requested to deliver
@@ -10,11 +13,11 @@ You are requested to deliver
 
 You can download the [archive](../project0.zip?raw=true) of the project into a directory of your choice. In this first part of the project, only food dots, capsules and Pacman are in the maze. Your task is to design an intelligent agent based on search algorithms (see [Lecture 2]) for **maximizing** the score. You are asked to implement the **breadth-first search (BFS)** and **A\*** algorithms. We recommend to implement them in this order. It is mandatory to use only the [API](..#api) to retrieve game information.
 
-To help you, we provide an implementation of the DFS algorithm in the `dfs.py` file. However, the `key` function is not finished. Once you have activated your Pacman environment (see [installation](..#installation)), you can test the DFS algorithm using the following commands:
+To help you, we provide an implementation of the DFS algorithm in the `dfs.py` file. However, the `key` function is not finished. Once you have activated your Pacman environment (see [installation](../docs/INSTALL_AND_RUN_TH.md)), you can test the DFS algorithm using the following commands:
 ```console
 $ python run.py --agentfile dfs.py  --layout medium
 ```
-If you want to test one of your implementation, just replace the script parameter `dfs` by the name (without the extension) of the agent file you want to test. Refer to the [usage section](..#usage) for more details about the options.
+If you want to test one of your implementation, just replace the script parameter `dfs` by the filename (including the `.py` extension) of the agent file you want to test. Refer to the [usage section](../docs/INSTALL_AND_RUN_TH.md) for more details about the options.
 
 ## Evaluation
 
@@ -32,8 +35,8 @@ Each of your agents will be evaluated against new mazes, some being designed to 
 
 ## คำแนะนำ (Instructions)
 
-คุณสามารถดาวน์โหลด [ไฟล์โครงการ](../project0.zip?raw=true) ไปยังโฟลเดอร์ที่คุณต้องการ ในส่วนแรกของโครงการนี้ ภายในเขาวงกต (maze) จะมีเพียงจุดอาหาร (food dots), แคปซูล (capsules) และ Pacman เท่านั้น  
-**ภารกิจของคุณ** คือ การออกแบบตัวแทนอัจฉริยะ (intelligent agent) โดยใช้อัลกอริทึมค้นหา (search algorithms) (ดู [Lecture 2])  
+คุณสามารถดาวน์โหลด [ไฟล์โครงการ](../project0.zip?raw=true) ไปยังโฟลเดอร์ที่คุณต้องการ ในส่วนแรกของโครงการนี้ ภายในเขาวงกต (maze) จะมีเพียงจุดอาหาร (food dots), แคปซูล (capsules) และ Pacman เท่านั้น
+**ภารกิจของคุณ** คือ การออกแบบตัวแทนอัจฉริยะ (intelligent agent) โดยใช้อัลกอริทึมค้นหา (search algorithms) (ดู [Lecture 2])
 โดยมีเป้าหมายเพื่อ **เพิ่มคะแนน (score) ให้ได้มากที่สุด**
 
 คุณจะต้องติดตั้งอัลกอริทึม:
@@ -42,17 +45,18 @@ Each of your agents will be evaluated against new mazes, some being designed to 
 
 เราแนะนำให้คุณเริ่มจาก BFS ก่อนแล้วจึงไปทำ A\*
 
-**ข้อกำหนดสำคัญ**  
-คุณจะต้องใช้งานเฉพาะ [API](..#api) เท่านั้นในการดึงข้อมูลสถานะของเกม  
+**ข้อกำหนดสำคัญ**
+คุณจะต้องใช้งานเฉพาะ [API](..#api) เท่านั้นในการดึงข้อมูลสถานะของเกม
 
-เพื่อช่วยคุณเริ่มต้น เราได้เตรียมตัวอย่างการติดตั้งอัลกอริทึม DFS ไว้ในไฟล์ `dfs.py` แล้ว  
-อย่างไรก็ตาม ฟังก์ชัน `key` ในไฟล์นี้ยังไม่เสร็จสมบูรณ์  
+เพื่อช่วยคุณเริ่มต้น เราได้เตรียมตัวอย่างการติดตั้งอัลกอริทึม DFS ไว้ในไฟล์ `dfs.py` แล้ว
+อย่างไรก็ตาม ฟังก์ชัน `key` ในไฟล์นี้ยังไม่เสร็จสมบูรณ์
 
-เมื่อคุณได้เปิดใช้งานสภาพแวดล้อม Pacman เรียบร้อยแล้ว (ดู [installation](..#installation))  
+เมื่อคุณได้เปิดใช้งานสภาพแวดล้อม Pacman เรียบร้อยแล้ว (ดู [installation](../docs/INSTALL_AND_RUN_TH.md))
 คุณสามารถทดสอบอัลกอริทึม DFS ได้ด้วยคำสั่งต่อไปนี้:
 
 ```console
 $ python run.py --agentfile dfs.py --layout medium
+```
 
 **การประเมินผล (Evaluation)**
 
@@ -61,12 +65,15 @@ $ python run.py --agentfile dfs.py --layout medium
 คุณควรเขียนการทดสอบของคุณเองเพิ่มเติม
 
 เกณฑ์การให้คะแนนมีดังนี้:
-	•	BFS (20%)
+
+- **BFS (20%)**
 ถ้าติดตั้งถูกต้อง ผลลัพธ์ควรได้คะแนนเท่ากับของเรา และขยายจำนวน node ใกล้เคียงกับของเรา
-	•	A* (75%)
+
+- **A* (75%)**
 อัลกอริทึม A* ที่ติดตั้งดีควรสามารถหาผลลัพธ์ที่ดีที่สุด (optimal solution) ได้ในทุกเขาวงกต
 จำนวน node ที่ถูกขยายขึ้นอยู่กับคุณภาพของ heuristic
 สำหรับอัลกอริทึมนี้ เราจะตรวจสอบว่าเส้นทางที่ได้ เป็นเส้นทางที่ดีที่สุด สำหรับเขาวงกตทุกแบบหรือไม่
 และจำนวน node ที่ขยายจะถูกนำมาพิจารณาด้วย (ยิ่งน้อยยิ่งดี)
-	•	รูปแบบการเขียนโค้ด (Code style) (5%)
+
+- **รูปแบบการเขียนโค้ด (Code style) (5%)**
 จะไม่ได้คะแนนถ้าโค้ดของคุณไม่เป็นไปตามมาตรฐาน PEP-8

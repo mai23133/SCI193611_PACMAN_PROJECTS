@@ -32,47 +32,40 @@
 
 ## การติดตั้ง
 
-> คำแนะนำด้านล่างนี้ได้รับการทดสอบใน Windows, Linux และ MacOS
+ทดสอบบน Linux แบบไม่มีหน้าต่างแล้ว; Windows/macOS และหน้าต่าง Tk ยังต้องตรวจบนเครื่องสมาชิก
+คู่มือเต็มอยู่ที่ [INSTALL_AND_RUN_TH.md](docs/INSTALL_AND_RUN_TH.md)
 
-เราแนะนำให้ติดตั้งสภาพแวดล้อม Python (3) โดยใช้ตัวจัดการแพ็กเกจ `conda` วิธีที่ง่ายที่สุดคือการติดตั้ง [Miniconda](https://docs.conda.io/en/latest/miniconda.html) คุณยังต้องมีโปรแกรมแก้ไขโค้ดที่รองรับ Python หากคุณยังไม่มี ลองพิจารณาโปรแกรมเหล่านี้: [Sublime Text](https://www.sublimetext.com/), [VS Code](https://code.visualstudio.com/), [Vim](https://www.vim.org/), ...
+จากโฟลเดอร์ root สร้าง virtual environment แล้วติดตั้งแพ็กเกจ:
 
-เมื่อติดตั้ง Miniconda เรียบร้อยแล้ว ให้เปิด Anaconda prompt (Windows) หรือ terminal (Linux/MacOS)
-
-### การตั้งค่า
-
-สร้างสภาพแวดล้อม `pacman` เปิดใช้งาน และติดตั้งไลบรารีที่จำเป็น:
-
-```console
-$ conda create --name pacman python=3.8
-$ conda activate pacman
-$ conda install numpy
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
 ```
 
-จากนี้ไป เราจะสันนิษฐานว่าคุณได้เปิดใช้งาน `pacman` แล้ว
+บน Windows ใช้ `py -3 -m venv .venv` และ `.\.venv\Scripts\Activate.ps1`
 
 ### การใช้งาน
 
-- `--agent`: เริ่มเกมด้วยตัวแทน Pacman ที่ผู้ใช้กำหนด
-    ```console
-    $ python run.py --agent humanagent
-    ```
+แต่ละโปรเจกต์ใช้ flags ต่างกัน ให้เข้าโฟลเดอร์นั้นก่อนรัน:
 
-- `--ghost`: เริ่มเกมด้วยตัวแทนผีที่ผู้ใช้กำหนด (`dumby`, `greedy`, `smarty` หรือ `eastrandy`)
-    ```console
-    $ python run.py --ghost dumby
-    ```
+```bash
+cd project0
+python run.py --agentfile astar.py --layout medium --silentdisplay
+cd ../project1
+python run.py --agent hminimax --ghost smarty --layout medium_adv --seed 42 --nographics
+cd ../project2
+python run.py --agentfile pacmanagent.py --bsagentfile bayesfilter.py --ghostagent scared --nghosts 3 --layout large_filter --seed 42 --silentdisplay
+cd ..
+```
 
-- `--layout`: เริ่มเกมด้วยเลย์เอาต์เขาวงกตที่ผู้ใช้กำหนด (ดูไดเรกทอรี `pacman_module/layouts`)
-    ```console
-    $ python run.py --layout medium
-    ```
+เอา `--silentdisplay` หรือ `--nographics` ออกเมื่อต้องการเปิดหน้าต่างและเครื่องมี Tk
+ไฟล์ ZIP ที่ root เป็นชุดเริ่มต้น; ใช้โค้ดในโฟลเดอร์โปรเจกต์และชุดส่งใน `deliverables/`
 
-- `--nographics`: ปิดการใช้งานอินเตอร์เฟซผู้ใช้แบบกราฟิก
-    ```console
-    $ python run.py --agent dfs --nographics
-    ```
+## คำแนะนำจากโจทย์เดิม
 
-## คำแนะนำ
+> ข้อความด้านล่างเก็บไว้เพื่ออ้างอิง ไม่ใช่การยืนยันกติกาปัจจุบัน
+> งานชุดนี้จัดสำหรับ 3 คนและเว้นชื่อในรายงาน; ตรวจจำนวนสมาชิก วันส่ง และช่องทางส่งกับประกาศรายวิชาก่อนส่งจริง
 
 ทุกส่วน (1 และ 2) ของโปรเจกต์ต้องทำเป็นกลุ่มสูงสุด 2 คน คุณต้องใช้กลุ่มเดียวกันตลอดทุกส่วน สำหรับแต่ละส่วน ให้ส่งผ่าน https://forms.gle/EfBqfEUzHTugzctp7 ด้วยบัญชี `google account` ของคุณ และส่งสิ่งที่ขอตามที่กำหนด อย่าลืมเพิ่มสมาชิกกลุ่มอื่นๆ ในการส่งแต่ละครั้ง
 

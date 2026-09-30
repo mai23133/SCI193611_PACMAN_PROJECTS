@@ -1,0 +1,24 @@
+{
+  "project0.tar.gz": {
+    "sha256": "41739d3e9eb15c803204e3da896430cab38603c791f4febeeeeb1ad526c80bb2",
+    "files": {
+      "bfs.py": "70b90c36ca9a19e2e8870030709be9f7eb5a2a429652a0f2a464aedd5c0f9822",
+      "astar.py": "0655a58fa4ba21d1b233a57795c13c3009c36dd5b941e5f227ab5d886ec5f400"
+    }
+  },
+  "project1.tar.gz": {
+    "sha256": "6654357cecd69719258cb3acb2c1220ee1db1c4190fa865caf95a26339908393",
+    "files": {
+      "minimax.py": "f4e26446e2257a600d22e464d1ec2a4ebd15a73d4deca2b0394324fb2b9079f2",
+      "hminimax.py": "082e4af7ffbefd06284b01c3bad6f0830056d06b31ab6512dfedf4d0101e0469"
+    }
+  },
+  "project2.tar.gz": {
+    "sha256": "3891ea0461ffb101115df42081a8ea407ab946dc0229f91efceb1db4fb1420de",
+    "files": {
+      "bayesfilter.py": "8876625c21be2409070aa1491656d1f1649a5b691980d8536cd63bd1df765471",
+      "pacmanagent.py": "237690ea7c922ab7bbd848a6ec1ee49181df27df5e4299f82cd05fd8ccc0fcb2",
+      "report.pdf": "f16606a6ddace327e417c186cda1a4806873e0eda8e8683ce7b97e0b86e3a532"
+    }
+  }
+}

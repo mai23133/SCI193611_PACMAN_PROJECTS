@@ -1,0 +1,66 @@
+{
+  "configuration": {
+    "steps": 27000,
+    "trials": 30,
+    "ghosts": 3,
+    "seed": 193611,
+    "policy": "confused",
+    "variance": 4,
+    "tail_window": 9000,
+    "pacman": "stationary",
+    "capture": false,
+    "tolerances": {
+      "entropy": 0.05,
+      "brier": 0.01
+    },
+    "criterion": "abs(paired tail change) + CI95 <= tolerance"
+  },
+  "scenarios": {
+    "large_filter": {
+      "metrics": {
+        "entropy": {
+          "mean": 4.148873001813291,
+          "ci95": 0.04362029220874232,
+          "tail_change": -0.1008204426345529,
+          "tail_change_ci95": 0.04369937117964962
+        },
+        "brier": {
+          "mean": 0.9242104803559515,
+          "ci95": 0.003399638938888393,
+          "tail_change": -0.003025108107037977,
+          "tail_change_ci95": 0.0032728372439313454
+        },
+        "expected_distance": {
+          "mean": 5.146954461411857,
+          "ci95": 0.035167300280886,
+          "tail_change": -0.0033097818265204935,
+          "tail_change_ci95": 0.054606665874665845
+        }
+      },
+      "within_tolerance": false
+    },
+    "large_filter_walls": {
+      "metrics": {
+        "entropy": {
+          "mean": 3.581717492694475,
+          "ci95": 0.03341880221002938,
+          "tail_change": -0.047297122722017595,
+          "tail_change_ci95": 0.05760605261059226
+        },
+        "brier": {
+          "mean": 0.8858293016760292,
+          "ci95": 0.006668477613898445,
+          "tail_change": -0.00023483880246921346,
+          "tail_change_ci95": 0.005684959526427426
+        },
+        "expected_distance": {
+          "mean": 4.3778466709137485,
+          "ci95": 0.06410696865780771,
+          "tail_change": 0.05026815790754638,
+          "tail_change_ci95": 0.09234321365447581
+        }
+      },
+      "within_tolerance": false
+    }
+  }
+}

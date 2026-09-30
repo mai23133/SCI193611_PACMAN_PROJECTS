@@ -90,7 +90,7 @@
     3 independent ghosts per trial, on both supplied filter layouts.
     Each policy was tested at $v\in\{0.25,1,4\}$, using seed 193611.
     Runs used 1800 steps at $v=0.25,1$ and 9000 steps at $v=4$;
-    the longer runs resolve the slower uncertainty decay at high noise.
+    the longer runs measure the slower uncertainty decay at high noise.
     The default-variance comparison is $v=1$.
     To avoid early termination and survivor-selection bias, Pacman stays
     at its initial cell and capture is disabled in these controlled tracking
@@ -127,6 +127,7 @@ Walls & scared & $0.943\pm0.007$ & $0.392\pm0.003$ \\
     bits and 0.004 Brier units. The high-noise confused policy still
     shows declining entropy; its variance comparison is a finite-duration
     result, not an equilibrium estimate.
+    An additional confused-policy check used 27000 steps per trial at $v=4$, with the same 30 trials, three ghosts and seed. Paired entropy changes (95\% CI) were open: $-0.101\pm0.044$ bits; walls: $-0.047\pm0.058$ bits. Not all maps met the predeclared practical stability criterion $|\Delta|+\mathrm{CI}_{95}\leq\epsilon$ for both metrics ($\epsilon_H=0.05$ bits, $\epsilon_B=0.01$). These additional results are stored separately in \texttt{results/high-noise-check.json}; the variance plot retains the original 9000-step study.
     The raw trial curves, individual confidence intervals and window changes
     are saved in \texttt{results/trials.npz} and \texttt{summary.json}.
     These are empirical stability diagnostics, not a proof of convergence

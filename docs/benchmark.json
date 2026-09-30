@@ -16,9 +16,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 497\nTotal score : 497.0\nTotal computation time (seconds) : 0.001817464828491211\nTotal expanded nodes : 23\n",
+    "output": "Pacman emerges victorious! Score: 497\nTotal score : 497.0\nTotal computation time (seconds) : 0.0012254714965820312\nTotal expanded nodes : 23\n",
     "score": 497.0,
-    "seconds": 0.001817464828491211,
+    "seconds": 0.0012254714965820312,
     "expanded": 23.0
   },
   {
@@ -38,9 +38,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 565\nTotal score : 565.0\nTotal computation time (seconds) : 4.4436914920806885\nTotal expanded nodes : 25761\n",
+    "output": "Pacman emerges victorious! Score: 565\nTotal score : 565.0\nTotal computation time (seconds) : 3.884092092514038\nTotal expanded nodes : 25761\n",
     "score": 565.0,
-    "seconds": 4.4436914920806885,
+    "seconds": 3.884092092514038,
     "expanded": 25761.0
   },
   {
@@ -60,9 +60,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 429\nTotal score : 429.0\nTotal computation time (seconds) : 0.897172212600708\nTotal expanded nodes : 3312\n",
+    "output": "Pacman emerges victorious! Score: 429\nTotal score : 429.0\nTotal computation time (seconds) : 0.8133177757263184\nTotal expanded nodes : 3312\n",
     "score": 429.0,
-    "seconds": 0.897172212600708,
+    "seconds": 0.8133177757263184,
     "expanded": 3312.0
   },
   {
@@ -82,9 +82,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 500\nTotal score : 500.0\nTotal computation time (seconds) : 0.0011992454528808594\nTotal expanded nodes : 11\n",
+    "output": "Pacman emerges victorious! Score: 500\nTotal score : 500.0\nTotal computation time (seconds) : 0.0008993148803710938\nTotal expanded nodes : 11\n",
     "score": 500.0,
-    "seconds": 0.0011992454528808594,
+    "seconds": 0.0008993148803710938,
     "expanded": 11.0
   },
   {
@@ -104,9 +104,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 568\nTotal score : 568.0\nTotal computation time (seconds) : 0.06603884696960449\nTotal expanded nodes : 351\n",
+    "output": "Pacman emerges victorious! Score: 568\nTotal score : 568.0\nTotal computation time (seconds) : 0.064697265625\nTotal expanded nodes : 351\n",
     "score": 568.0,
-    "seconds": 0.06603884696960449,
+    "seconds": 0.064697265625,
     "expanded": 351.0
   },
   {
@@ -126,9 +126,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 433\nTotal score : 433.0\nTotal computation time (seconds) : 0.07968521118164062\nTotal expanded nodes : 227\n",
+    "output": "Pacman emerges victorious! Score: 433\nTotal score : 433.0\nTotal computation time (seconds) : 0.06953287124633789\nTotal expanded nodes : 227\n",
     "score": 433.0,
-    "seconds": 0.07968521118164062,
+    "seconds": 0.06953287124633789,
     "expanded": 227.0
   },
   {
@@ -148,9 +148,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 487\nTotal score : 487.0\nTotal computation time (seconds) : 0.0013034343719482422\nTotal expanded nodes : 18\n",
+    "output": "Pacman emerges victorious! Score: 487\nTotal score : 487.0\nTotal computation time (seconds) : 0.0014033317565917969\nTotal expanded nodes : 18\n",
     "score": 487.0,
-    "seconds": 0.0013034343719482422,
+    "seconds": 0.0014033317565917969,
     "expanded": 18.0
   },
   {
@@ -170,9 +170,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 405\nTotal score : 405.0\nTotal computation time (seconds) : 0.04540753364562988\nTotal expanded nodes : 362\n",
+    "output": "Pacman emerges victorious! Score: 405\nTotal score : 405.0\nTotal computation time (seconds) : 0.04077768325805664\nTotal expanded nodes : 362\n",
     "score": 405.0,
-    "seconds": 0.04540753364562988,
+    "seconds": 0.04077768325805664,
     "expanded": 362.0
   },
   {
@@ -192,9 +192,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 314\nTotal score : 314.0\nTotal computation time (seconds) : 0.08852791786193848\nTotal expanded nodes : 371\n",
+    "output": "Pacman emerges victorious! Score: 314\nTotal score : 314.0\nTotal computation time (seconds) : 0.07953286170959473\nTotal expanded nodes : 371\n",
     "score": 314.0,
-    "seconds": 0.08852791786193848,
+    "seconds": 0.07953286170959473,
     "expanded": 371.0
   },
   {
@@ -218,9 +218,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.01755809783935547\nExpanded nodes: 263\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.019872665405273438\nExpanded nodes: 263\n",
     "score": 516.0,
-    "seconds": 0.01755809783935547,
+    "seconds": 0.019872665405273438,
     "expanded": 263.0
   },
   {
@@ -244,9 +244,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.018895626068115234\nExpanded nodes: 263\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.021363258361816406\nExpanded nodes: 263\n",
     "score": 516.0,
-    "seconds": 0.018895626068115234,
+    "seconds": 0.021363258361816406,
     "expanded": 263.0
   },
   {
@@ -270,9 +270,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.035831451416015625\nExpanded nodes: 263\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.020092248916625977\nExpanded nodes: 263\n",
     "score": 516.0,
-    "seconds": 0.035831451416015625,
+    "seconds": 0.020092248916625977,
     "expanded": 263.0
   },
   {
@@ -296,9 +296,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.01676154136657715\nExpanded nodes: 263\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.019872426986694336\nExpanded nodes: 263\n",
     "score": 516.0,
-    "seconds": 0.01676154136657715,
+    "seconds": 0.019872426986694336,
     "expanded": 263.0
   },
   {
@@ -322,9 +322,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.0174102783203125\nExpanded nodes: 263\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.021572589874267578\nExpanded nodes: 263\n",
     "score": 516.0,
-    "seconds": 0.0174102783203125,
+    "seconds": 0.021572589874267578,
     "expanded": 263.0
   },
   {
@@ -348,9 +348,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.0169370174407959\nExpanded nodes: 263\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.020212888717651367\nExpanded nodes: 263\n",
     "score": 516.0,
-    "seconds": 0.0169370174407959,
+    "seconds": 0.020212888717651367,
     "expanded": 263.0
   },
   {
@@ -374,9 +374,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.0034661293029785156\nExpanded nodes: 37\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.004858493804931641\nExpanded nodes: 37\n",
     "score": 516.0,
-    "seconds": 0.0034661293029785156,
+    "seconds": 0.004858493804931641,
     "expanded": 37.0
   },
   {
@@ -400,9 +400,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.00434112548828125\nExpanded nodes: 37\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.002738475799560547\nExpanded nodes: 37\n",
     "score": 516.0,
-    "seconds": 0.00434112548828125,
+    "seconds": 0.002738475799560547,
     "expanded": 37.0
   },
   {
@@ -426,9 +426,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.003579854965209961\nExpanded nodes: 37\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.002557992935180664\nExpanded nodes: 37\n",
     "score": 516.0,
-    "seconds": 0.003579854965209961,
+    "seconds": 0.002557992935180664,
     "expanded": 37.0
   },
   {
@@ -452,9 +452,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.0034263134002685547\nExpanded nodes: 37\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.002524852752685547\nExpanded nodes: 37\n",
     "score": 516.0,
-    "seconds": 0.0034263134002685547,
+    "seconds": 0.002524852752685547,
     "expanded": 37.0
   },
   {
@@ -478,9 +478,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.004218339920043945\nExpanded nodes: 37\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.003878355026245117\nExpanded nodes: 37\n",
     "score": 516.0,
-    "seconds": 0.004218339920043945,
+    "seconds": 0.003878355026245117,
     "expanded": 37.0
   },
   {
@@ -504,9 +504,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.00468897819519043\nExpanded nodes: 37\n",
+    "output": "Pacman emerges victorious! Score: 516\nScore: 516.0\nComputation time: 0.0030083656311035156\nExpanded nodes: 37\n",
     "score": 516.0,
-    "seconds": 0.00468897819519043,
+    "seconds": 0.0030083656311035156,
     "expanded": 37.0
   },
   {
@@ -530,9 +530,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 536\nScore: 536.0\nComputation time: 0.35413551330566406\nExpanded nodes: 2290\n",
+    "output": "Pacman emerges victorious! Score: 536\nScore: 536.0\nComputation time: 0.2958376407623291\nExpanded nodes: 2290\n",
     "score": 536.0,
-    "seconds": 0.35413551330566406,
+    "seconds": 0.2958376407623291,
     "expanded": 2290.0
   },
   {
@@ -556,9 +556,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 536\nScore: 536.0\nComputation time: 0.3564877510070801\nExpanded nodes: 2290\n",
+    "output": "Pacman emerges victorious! Score: 536\nScore: 536.0\nComputation time: 0.29949045181274414\nExpanded nodes: 2290\n",
     "score": 536.0,
-    "seconds": 0.3564877510070801,
+    "seconds": 0.29949045181274414,
     "expanded": 2290.0
   },
   {
@@ -582,9 +582,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.21367502212524414\nExpanded nodes: 1149\n",
+    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.1605854034423828\nExpanded nodes: 1149\n",
     "score": 539.0,
-    "seconds": 0.21367502212524414,
+    "seconds": 0.1605854034423828,
     "expanded": 1149.0
   },
   {
@@ -608,9 +608,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.18199396133422852\nExpanded nodes: 1149\n",
+    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.16027259826660156\nExpanded nodes: 1149\n",
     "score": 539.0,
-    "seconds": 0.18199396133422852,
+    "seconds": 0.16027259826660156,
     "expanded": 1149.0
   },
   {
@@ -634,9 +634,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.19480466842651367\nExpanded nodes: 1150\n",
+    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.16881346702575684\nExpanded nodes: 1150\n",
     "score": 539.0,
-    "seconds": 0.19480466842651367,
+    "seconds": 0.16881346702575684,
     "expanded": 1150.0
   },
   {
@@ -660,9 +660,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.18316960334777832\nExpanded nodes: 1150\n",
+    "output": "Pacman emerges victorious! Score: 539\nScore: 539.0\nComputation time: 0.16737103462219238\nExpanded nodes: 1150\n",
     "score": 539.0,
-    "seconds": 0.18316960334777832,
+    "seconds": 0.16737103462219238,
     "expanded": 1150.0
   },
   {
@@ -686,9 +686,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 532\nScore: 532.0\nComputation time: 1.6836016178131104\nExpanded nodes: 9089\n",
+    "output": "Pacman emerges victorious! Score: 532\nScore: 532.0\nComputation time: 1.5431890487670898\nExpanded nodes: 9089\n",
     "score": 532.0,
-    "seconds": 1.6836016178131104,
+    "seconds": 1.5431890487670898,
     "expanded": 9089.0
   },
   {
@@ -712,9 +712,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 532\nScore: 532.0\nComputation time: 1.7280166149139404\nExpanded nodes: 9089\n",
+    "output": "Pacman emerges victorious! Score: 532\nScore: 532.0\nComputation time: 1.5488741397857666\nExpanded nodes: 9089\n",
     "score": 532.0,
-    "seconds": 1.7280166149139404,
+    "seconds": 1.5488741397857666,
     "expanded": 9089.0
   },
   {
@@ -738,9 +738,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.7151226997375488\nExpanded nodes: 3670\n",
+    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.6318855285644531\nExpanded nodes: 3670\n",
     "score": 530.0,
-    "seconds": 0.7151226997375488,
+    "seconds": 0.6318855285644531,
     "expanded": 3670.0
   },
   {
@@ -764,9 +764,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.789208173751831\nExpanded nodes: 3670\n",
+    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.6864163875579834\nExpanded nodes: 3670\n",
     "score": 530.0,
-    "seconds": 0.789208173751831,
+    "seconds": 0.6864163875579834,
     "expanded": 3670.0
   },
   {
@@ -790,9 +790,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.828789234161377\nExpanded nodes: 3670\n",
+    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.743844747543335\nExpanded nodes: 3670\n",
     "score": 530.0,
-    "seconds": 0.828789234161377,
+    "seconds": 0.743844747543335,
     "expanded": 3670.0
   },
   {
@@ -816,9 +816,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.8478717803955078\nExpanded nodes: 3670\n",
+    "output": "Pacman emerges victorious! Score: 530\nScore: 530.0\nComputation time: 0.725989818572998\nExpanded nodes: 3670\n",
     "score": 530.0,
-    "seconds": 0.8478717803955078,
+    "seconds": 0.725989818572998,
     "expanded": 3670.0
   },
   {
@@ -846,9 +846,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1073\nTotal score : 1073.0\nTotal computation time (seconds) : 0.11882734298706055\n",
+    "output": "Pacman emerges victorious! Score: 1073\nTotal score : 1073.0\nTotal computation time (seconds) : 0.09248065948486328\n",
     "score": 1073.0,
-    "seconds": 0.11882734298706055
+    "seconds": 0.09248065948486328
   },
   {
     "project": 2,
@@ -875,9 +875,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1045\nTotal score : 1045.0\nTotal computation time (seconds) : 0.20252060890197754\n",
+    "output": "Pacman emerges victorious! Score: 1045\nTotal score : 1045.0\nTotal computation time (seconds) : 0.16035795211791992\n",
     "score": 1045.0,
-    "seconds": 0.20252060890197754
+    "seconds": 0.16035795211791992
   },
   {
     "project": 2,
@@ -904,9 +904,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1032\nTotal score : 1032.0\nTotal computation time (seconds) : 0.28205394744873047\n",
+    "output": "Pacman emerges victorious! Score: 1032\nTotal score : 1032.0\nTotal computation time (seconds) : 0.25522851943969727\n",
     "score": 1032.0,
-    "seconds": 0.28205394744873047
+    "seconds": 0.25522851943969727
   },
   {
     "project": 2,
@@ -933,9 +933,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1007\nTotal score : 1007.0\nTotal computation time (seconds) : 0.42741918563842773\n",
+    "output": "Pacman emerges victorious! Score: 1007\nTotal score : 1007.0\nTotal computation time (seconds) : 0.40653419494628906\n",
     "score": 1007.0,
-    "seconds": 0.42741918563842773
+    "seconds": 0.40653419494628906
   },
   {
     "project": 2,
@@ -962,9 +962,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1064\nTotal score : 1064.0\nTotal computation time (seconds) : 0.15410089492797852\n",
+    "output": "Pacman emerges victorious! Score: 1064\nTotal score : 1064.0\nTotal computation time (seconds) : 0.13008332252502441\n",
     "score": 1064.0,
-    "seconds": 0.15410089492797852
+    "seconds": 0.13008332252502441
   },
   {
     "project": 2,
@@ -991,9 +991,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1028\nTotal score : 1028.0\nTotal computation time (seconds) : 0.2781047821044922\n",
+    "output": "Pacman emerges victorious! Score: 1028\nTotal score : 1028.0\nTotal computation time (seconds) : 0.26934242248535156\n",
     "score": 1028.0,
-    "seconds": 0.2781047821044922
+    "seconds": 0.26934242248535156
   },
   {
     "project": 2,
@@ -1020,9 +1020,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1069\nTotal score : 1069.0\nTotal computation time (seconds) : 0.09899044036865234\n",
+    "output": "Pacman emerges victorious! Score: 1069\nTotal score : 1069.0\nTotal computation time (seconds) : 0.10215544700622559\n",
     "score": 1069.0,
-    "seconds": 0.09899044036865234
+    "seconds": 0.10215544700622559
   },
   {
     "project": 2,
@@ -1049,9 +1049,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 947\nTotal score : 947.0\nTotal computation time (seconds) : 0.4232823848724365\n",
+    "output": "Pacman emerges victorious! Score: 947\nTotal score : 947.0\nTotal computation time (seconds) : 0.4266057014465332\n",
     "score": 947.0,
-    "seconds": 0.4232823848724365
+    "seconds": 0.4266057014465332
   },
   {
     "project": 2,
@@ -1078,9 +1078,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1066\nTotal score : 1066.0\nTotal computation time (seconds) : 0.1123204231262207\n",
+    "output": "Pacman emerges victorious! Score: 1066\nTotal score : 1066.0\nTotal computation time (seconds) : 0.11266183853149414\n",
     "score": 1066.0,
-    "seconds": 0.1123204231262207
+    "seconds": 0.11266183853149414
   },
   {
     "project": 2,
@@ -1107,9 +1107,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 1003\nTotal score : 1003.0\nTotal computation time (seconds) : 0.29820847511291504\n",
+    "output": "Pacman emerges victorious! Score: 1003\nTotal score : 1003.0\nTotal computation time (seconds) : 0.30955934524536133\n",
     "score": 1003.0,
-    "seconds": 0.29820847511291504
+    "seconds": 0.30955934524536133
   },
   {
     "project": 2,
@@ -1136,9 +1136,9 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 988\nTotal score : 988.0\nTotal computation time (seconds) : 0.37330055236816406\n",
+    "output": "Pacman emerges victorious! Score: 988\nTotal score : 988.0\nTotal computation time (seconds) : 0.33387255668640137\n",
     "score": 988.0,
-    "seconds": 0.37330055236816406
+    "seconds": 0.33387255668640137
   },
   {
     "project": 2,
@@ -1165,8 +1165,8 @@
     ],
     "returncode": 0,
     "won": true,
-    "output": "Pacman emerges victorious! Score: 962\nTotal score : 962.0\nTotal computation time (seconds) : 0.44485926628112793\n",
+    "output": "Pacman emerges victorious! Score: 962\nTotal score : 962.0\nTotal computation time (seconds) : 0.4426419734954834\n",
     "score": 962.0,
-    "seconds": 0.44485926628112793
+    "seconds": 0.4426419734954834
   }
 ]
