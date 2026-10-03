@@ -34,6 +34,7 @@ SCI193611_PACMAN_PROJECTS/
 │   └── report.pdf             รายงานภาษาอังกฤษ เว้นชื่อ
 ├── scripts/
 │   ├── benchmark.py           ทดสอบ CLI เกมจริง
+│   ├── check_high_noise.py   ตรวจความนิ่งเพิ่มเติมที่ noise สูง
 │   ├── build_report.py        เติมรายงานจากผลทดลองและคอมไพล์
 │   └── package_submissions.py รวมไฟล์ตามข้อกำหนด
 ├── tests/                     การทดสอบอัลกอริทึมและข้อห้ามแก้ฟังก์ชัน
