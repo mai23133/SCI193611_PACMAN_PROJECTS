@@ -9,6 +9,7 @@
 - [ติดตั้งตั้งแต่ศูนย์ รัน ทดสอบ สร้างรายงาน และจัดชุดส่งงาน](docs/INSTALL_AND_RUN_TH.md)
 - [ขั้นตอนการทำงานและการแบ่งงานสามคน](docs/WORKFLOW_TH.md)
 - [คำอธิบายโค้ด สมการ เหตุผล และข้อจำกัดอย่างละเอียด](docs/CODE_EXPLANATION_TH.md)
+- [คู่มืออ่านโค้ดทีละส่วน พร้อมเหตุผลและผลของทางเลือกอื่น](docs/CODE_WALKTHROUGH_AND_ALTERNATIVES_TH.md)
 - [ผลการตรวจสอบจริง](docs/VALIDATION_TH.md)
 - [รายงาน Project 2](project2/report.pdf) และ [ชุดไฟล์ส่งงาน](deliverables/)
 
