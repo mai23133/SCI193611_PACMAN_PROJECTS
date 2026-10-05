@@ -207,6 +207,21 @@ python scripts/benchmark.py
 จำนวนโหนดและคะแนนมีประโยชน์กว่าเวลาเมื่อต้องเปรียบเทียบข้ามเครื่อง
 benchmark รันพร้อมกันได้สาม process จึงมีการแข่งขันใช้ CPU
 
+### รันชุด `grade_test` ที่อยู่ในแต่ละโปรเจกต์
+
+ชุดทดสอบที่ได้รับมาวางไว้ใน `project0/grade_test/`, `project1/grade_test/`
+และ `project2/grade_test/` แล้ว จากโฟลเดอร์ root รันชุดย่อได้ดังนี้:
+
+```bash
+python project0/grade_test/grade.py --project 0 --fast
+python project1/grade_test/grade.py --project 1 --fast
+python project2/grade_test/grade.py --project 2 --fast
+```
+
+grader ใช้โฟลเดอร์แม่ของ `grade_test` เป็น submission โดยอัตโนมัติ
+ถ้าต้องการรันทุกกรณี ให้เอา `--fast` ออก คำสั่งรันอาจติดตั้งไฟล์ layout
+เพิ่มเติมใน `pacman_module/layouts/` ของโปรเจกต์นั้น
+
 ## 10. สร้างผลทดลองและกราฟ Project 2
 
 ```bash
